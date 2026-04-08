@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Knewave&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#006E2B",
+                    "secondary": "#06C755",
+                    "surface": "#ffffff",
+                    "surface-container": "#f8fcf9",
+                    "on-surface": "#0f1a15",
+                    "on-surface-variant": "#4a5c54",
+                    "outline": "#d1dbd5",
+                    "accent": "#FFD166"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1.5rem",
+                    "lg": "2.5rem",
+                    "xl": "4rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans", "Noto Sans JP"],
+                    "body": ["Noto Sans JP", "Plus Jakarta Sans"],
+                    "logo": ["Knewave"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        .font-logo { font-family: 'Knewave', cursive; }
+        .font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-header { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(255, 255, 255, 0.85); }
+        .vibrant-gradient { background: linear-gradient(135deg, #006E2B 0%, #06C755 100%); }
+        .organic-shape { border-radius: 60% 40% 70% 30% / 40% 50% 60% 40%; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .img-hover-zoom { overflow: hidden; }
+        .img-hover-zoom img { transition: transform 0.5s ease; }
+        .img-hover-zoom:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary/30">
+<header class="fixed top-0 left-0 w-full z-50 glass-header border-b border-secondary/10">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="font-logo text-3xl text-primary">nest</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-on-surface-variant font-jakarta font-semibold text-sm hover:text-primary transition-colors" href="#how">使い方を見る</a>
+<a class="text-on-surface-variant font-jakarta font-semibold text-sm hover:text-primary transition-colors" href="#pricing">料金</a>
+</div>
+<a class="vibrant-gradient text-white px-8 py-3 rounded-full font-jakarta font-bold text-sm tracking-wide shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all" href="#start">無料ではじめる</a>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center px-6 py-20 overflow-hidden">
+<div class="absolute top-1/4 -right-20 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px] -z-10"></div>
+<div class="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] -z-10"></div>
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center w-full">
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 px-4 py-2 rounded-full mb-8">
+<span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
+<span class="text-primary text-xs font-black tracking-widest uppercase">LINE連携で簡単スタート</span>
+</div>
+<h1 class="text-6xl lg:text-8xl font-jakarta font-black tracking-tight leading-[1.05] mb-8">
+                        フライヤーはもう<br/><span class="text-primary italic relative">要らない。</span>
+</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed max-w-lg mb-12">
+                        nestは、イベントの告知・集客・入場管理をLINEだけで完結させる、小さなコミュニティのための拡散ツールです。
+                    </p>
+<div class="flex flex-wrap gap-5">
+<a class="vibrant-gradient text-white px-12 py-5 rounded-full font-jakarta font-extrabold text-lg shadow-2xl shadow-primary/30 hover:shadow-primary/40 hover:-translate-y-1 transition-all" href="#start">今すぐはじめる</a>
+<a class="bg-surface-container border border-outline/50 text-on-surface px-12 py-5 rounded-full font-jakarta font-extrabold text-lg hover:bg-white hover:border-primary transition-all" href="#how">使い方を見る</a>
+</div>
+<p class="mt-6 text-sm text-on-surface-variant/70 font-medium">
+                        イベント1件公開 1,000円 ・ 月額なし
+                    </p>
+</div>
+<div class="relative">
+<div class="relative z-10 p-4 bg-white rounded-[3rem] shadow-[0_40px_100px_-20px_rgba(0,110,43,0.15)] overflow-hidden">
+<img alt="Modern visual for LINE integration" class="w-full aspect-[4/5] object-cover rounded-[2.5rem]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-D_J_ale4pnx0V46K5wregn14Qx53Id0hp8hYacHtS9X2v9NbQnNIRPGmG6NsnMpkeug2uq8LMevpHFxF7PCShE4UG5XZ3uW7gWBdr__EjBWNEXm_AKpaYGig004J-niFT6vHVCvpESV2Op4BP3MICbH7xSVm1YV_yTk2p5Mp_obg26IOMwuScJGMHqV62C-mcWtDaHxa4Y4HYEV8FM6fr3myiA4RMAGfPR4LNkcQZx3-aQv-O6tY45lmTxNxosahqNTvdxHRZ9M5"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-secondary organic-shape opacity-20 -z-10 animate-spin-slow"></div>
+</div>
+</div>
+</section>
+<!-- Problem 1: Pitfalls -->
+<section class="py-32 px-6 bg-surface-container/50">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20 reveal">
+<span class="text-primary font-black tracking-widest text-xs uppercase mb-4 block">よくある告知の落とし穴</span>
+<h2 class="text-4xl lg:text-6xl font-jakarta font-extrabold mb-8">そのLINE告知、<br/>本当に読まれていますか？</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto leading-loose">
+                        告知は「送った」じゃなく、<strong class="text-on-surface">「読まれた」で完成する。</strong><br/>
+                        一番もったいないのは、行きたかったのに知らなかった、をつくってしまうこと。
+                    </p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 mb-24">
+<div class="bg-white p-10 rounded-lg shadow-sm border border-outline/30 reveal">
+<div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-red-500">article</span>
+</div>
+<span class="inline-block bg-red-50 text-red-500 text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full mb-6">よくある告知①</span>
+<h3 class="text-xl font-bold mb-4">長文でイベント詳細を送る</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">読む気が起きない。大事な情報がどこにあるかわからない。スクロールしてスルーされる。</p>
+</div>
+<div class="bg-white p-10 rounded-lg shadow-sm border border-outline/30 reveal">
+<div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-red-500">photo_library</span>
+</div>
+<span class="inline-block bg-red-50 text-red-500 text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full mb-6">よくある告知②</span>
+<h3 class="text-xl font-bold mb-4">写真を何枚も連投する</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">トーク欄が埋まって迷惑がられる。結局何のイベントかわからないまま流れていく。</p>
+</div>
+<div class="bg-white p-10 rounded-lg shadow-sm border border-outline/30 reveal">
+<div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-red-500">image_not_supported</span>
+</div>
+<span class="inline-block bg-red-50 text-red-500 text-[10px] font-black tracking-widest uppercase px-3 py-1 rounded-full mb-6">よくある告知③</span>
+<h3 class="text-xl font-bold mb-4">フライヤーの写真を1枚だけ送る</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">小さくて読めない。保存もされない。友達に転送しにくくて拡散が止まる。</p>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-2xl shadow-primary/5 border border-primary/20 reveal overflow-hidden">
+<div class="text-primary font-black tracking-[0.2em] text-xs uppercase pt-12 text-center">nest なら</div>
+<div class="grid md:grid-cols-3">
+<div class="p-12 text-center group">
+<div class="w-full aspect-square rounded-2xl mb-8 overflow-hidden bg-surface-container shadow-inner">
+<img alt="Card UI" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2OaI_KoSR1UJX7a1gjlLm_EPmjrKEKzgbrdypmb50I1Wa45hWfgav_qJer5RC9YfsjdSrqRj0KsMfb2JP9P_-9QWcZouxtwWJTgp2j8nxNLQhnR8BPYmrNsUFwsGMoGvZLw0TP-lYQGyJt62RJhIrViDMxvHu62Tk4aIx8yDQqRHYGTs0qRKs2rh2ETI07fsEvt68Qh_bA1yegd8uptbEg7mQAAxpPvyK8cM0VIPpofeo9W8KctjVGyQznpragk8Y_RQPu-vA7eb3"/>
+</div>
+<div class="w-12 h-12 vibrant-gradient rounded-full flex items-center justify-center text-white mx-auto mb-6 shadow-lg">
+<span class="material-symbols-outlined">done_all</span>
+</div>
+<p class="font-bold mb-3 text-lg">見やすいカードが1通届く</p>
+<p class="text-on-surface-variant text-sm leading-relaxed">必要な情報が整理されたFlexメッセージが自動生成される</p>
+</div>
+<div class="p-12 text-center group border-x border-outline/10">
+<div class="w-full aspect-square rounded-2xl mb-8 overflow-hidden bg-surface-container shadow-inner">
+<img alt="App interface" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6vERyywJqRvk5sfQZN8srjULIuo6l7Sl-tFAq4Zs7KuR8TPMzxQs-UP3eLIlKtnZwFoaqgxjY7BgP1BslH_Sv3vacpkTVahYXmuuuJcITTbs9SLDeukpJLWb8MU3M17SpLIA8fYKzMKD3RWgTtnzJF6y1GGIaxOhyD2_KGeIvfQtpjgt96WnX7Zb0pPV99jH8kRksHdQcu-2aFwZtSSicsFD7FW1FtRHf2Bmu_9M2S9OKTv1CKacGrLQE3xp5woZkJd3vCPSScj1K"/>
+</div>
+<div class="w-12 h-12 vibrant-gradient rounded-full flex items-center justify-center text-white mx-auto mb-6 shadow-lg">
+<span class="material-symbols-outlined">touch_app</span>
+</div>
+<p class="font-bold mb-3 text-lg">タップすれば詳細ページへ</p>
+<p class="text-on-surface-variant text-sm leading-relaxed">A4に収まらない情報もブログ感覚で専用ページに全部載せられる</p>
+</div>
+<div class="p-12 text-center group">
+<div class="w-full aspect-square rounded-2xl mb-8 overflow-hidden bg-surface-container shadow-inner">
+<img alt="People connecting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-a-9XV7fbljUx9agT6C-s1EN7mHc60P4sBJbShXvXIqKopEhyc8hsjoBSzGJPsGnLNNGChvaHFlMGxRfR5bUrSmECdb8eXOTf6M-sq0C7C3qKpnDnaQp5zfCtxV4XGmYZDDigb_L8J3XPYVxl_WVBft9zE31HdZNSf61WkTdU1bZRdX5H8t_RrnP2E1JBSc8lZo3oEjL1AG34nKIdGoMdafE-ILQWnGYdsHYQMKIGfRQEzgGix0QCYoPeRJRpO3uUGdhuj-GVxrel"/>
+</div>
+<div class="w-12 h-12 vibrant-gradient rounded-full flex items-center justify-center text-white mx-auto mb-6 shadow-lg">
+<span class="material-symbols-outlined">group_add</span>
+</div>
+<p class="font-bold mb-3 text-lg">友達が「これ良さそう」と広めてくれる</p>
+<p class="text-on-surface-variant text-sm leading-relaxed">友人からの紹介だから信頼される。口コミが自然に広がる</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Problem 2 -->
+<section class="py-32 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="reveal">
+<span class="text-primary font-black tracking-widest text-xs uppercase mb-4 block">こんな悩みありませんか</span>
+<h2 class="text-4xl lg:text-6xl font-jakarta font-extrabold mb-8 leading-tight">告知、意外と<br/>手間かかってませんか？</h2>
+<p class="text-on-surface-variant text-lg leading-loose mb-10">
+                            チラシを作って、印刷して、配って…。<br/>
+                            それだけで半日つぶれることも。<br/>
+                            そのわりに、届かない人には届かない。
+                        </p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-base">circle</span>
+<span>知らない人を集めるより、知っている人ともっとつながる。</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-base">circle</span>
+<span>それだけで、お店は変わる。</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-surface-container p-8 rounded-lg hover:bg-white hover:shadow-xl transition-all reveal group">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">print</span>
+<h3 class="font-bold mb-2">フライヤーの印刷代・手間が地味にかかる</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">デザインして、入稿して、受け取って、配って。毎回のルーティンが負担に。</p>
+</div>
+<div class="bg-surface-container p-8 rounded-lg hover:bg-white hover:shadow-xl transition-all reveal group">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">campaign</span>
+<h3 class="font-bold mb-2">SNSで投稿しても、知人に届いてるか不安</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">アルゴリズムの壁で、一番来てほしい人に届いていないかも。</p>
+</div>
+<div class="bg-surface-container p-8 rounded-lg hover:bg-white hover:shadow-xl transition-all reveal group">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">assignment</span>
+<h3 class="font-bold mb-2">予約管理がLINEのトーク欄でカオスに</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">「行きます！」が散らばって、ドタキャンや人数ミスが起きてしまう。</p>
+</div>
+<div class="bg-surface-container p-8 rounded-lg hover:bg-white hover:shadow-xl transition-all reveal group">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl group-hover:scale-110 transition-transform">payments</span>
+<h3 class="font-bold mb-2">ECサービスを導入したけど誰も来ない</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">高いお金を払ってページを作っても、集客できる人がいないと意味がない。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features -->
+<section class="py-32 px-6 bg-primary overflow-hidden relative">
+<div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+<div class="absolute top-[-10%] right-[-10%] w-[80%] aspect-square organic-shape border-[40px] border-white"></div>
+</div>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="mb-20 reveal">
+<span class="text-secondary font-black tracking-widest text-xs uppercase mb-4 block">nestでできること</span>
+<h2 class="text-4xl lg:text-7xl font-jakarta font-black text-white mb-6">告知に必要なことが<br/>全部LINEで完結する</h2>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="bg-white/5 backdrop-blur-md p-10 rounded-lg border border-white/10 hover:bg-white/10 transition-all reveal">
+<span class="inline-block bg-accent text-primary text-[10px] font-black px-3 py-1 rounded-full mb-6 uppercase">イベントページ</span>
+<span class="material-symbols-outlined text-white text-4xl block mb-6">description</span>
+<h3 class="text-white text-xl font-bold mb-4">A4に収まらない情報も<br/>ブログ感覚でページ化</h3>
+<p class="text-white/70 text-sm leading-relaxed">チラシのスペースを気にせず、写真・テキスト・特典情報を自由に載せられる専用ページを数分で作成。URLを送るだけで共有できます。</p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-white/5 backdrop-blur-md p-10 rounded-lg border border-white/10 hover:bg-white/10 transition-all reveal">
+<span class="inline-block bg-accent text-primary text-[10px] font-black px-3 py-1 rounded-full mb-6 uppercase">Flexメッセージ</span>
+<span class="material-symbols-outlined text-white text-4xl block mb-6">chat_bubble</span>
+<h3 class="text-white text-xl font-bold mb-4">見栄えのいい告知を<br/>LINEから一斉配信</h3>
+<p class="text-white/70 text-sm leading-relaxed">プロが作ったようなリッチなメッセージが自動生成されます。画像・日時・特典情報が整ったカードが、お客さんのLINEに直接届きます。</p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-white/5 backdrop-blur-md p-10 rounded-lg border border-white/10 hover:bg-white/10 transition-all reveal">
+<span class="inline-block bg-accent text-primary text-[10px] font-black px-3 py-1 rounded-full mb-6 uppercase">サポーター機能</span>
+<span class="material-symbols-outlined text-white text-4xl block mb-6">handshake</span>
+<h3 class="text-white text-xl font-bold mb-4">友人を"広報担当"に。<br/>口コミの力で拡散</h3>
+<p class="text-white/70 text-sm leading-relaxed">サポーターを招待すると、友人も自分のLINEからイベントを拡散できます。誰経由で何人来たか、固有URLで可視化できます。</p>
+</div>
+<!-- Feature 4 -->
+<div class="bg-white/5 backdrop-blur-md p-10 rounded-lg border border-white/10 hover:bg-white/10 transition-all reveal">
+<span class="inline-block bg-accent text-primary text-[10px] font-black px-3 py-1 rounded-full mb-6 uppercase">入場管理</span>
+<span class="material-symbols-outlined text-white text-4xl block mb-6">qr_code_scanner</span>
+<h3 class="text-white text-xl font-bold mb-4">当日はQRをかざすだけ。<br/>受付をスマートに</h3>
+<p class="text-white/70 text-sm leading-relaxed">予約者にはQRコードが発行されます。当日はスマホで読み取るだけで入場確認が完了。名簿との照合作業がなくなります。</p>
+</div>
+<!-- Feature 5 -->
+<div class="bg-white/5 backdrop-blur-md p-10 rounded-lg border border-white/10 hover:bg-white/10 transition-all reveal">
+<span class="inline-block bg-accent text-primary text-[10px] font-black px-3 py-1 rounded-full mb-6 uppercase">ダッシュボード</span>
+<span class="material-symbols-outlined text-white text-4xl block mb-6">dashboard</span>
+<h3 class="text-white text-xl font-bold mb-4">自分のイベントだけを<br/>すっきり一元管理</h3>
+<p class="text-white/70 text-sm leading-relaxed">作成したイベント・予約数・集客経路がひと目でわかるダッシュボード。複数イベントも迷わず管理できます。</p>
+</div>
+<!-- Feature 6 -->
+<div class="bg-white/5 backdrop-blur-md p-10 rounded-lg border border-white/10 hover:bg-white/10 transition-all reveal">
+<span class="inline-block bg-accent text-primary text-[10px] font-black px-3 py-1 rounded-full mb-6 uppercase">特典設定</span>
+<span class="material-symbols-outlined text-white text-4xl block mb-6">featured_seasonal_and_gifts</span>
+<h3 class="text-white text-xl font-bold mb-4">「事前予約割引」などの<br/>特典で予約を後押し</h3>
+<p class="text-white/70 text-sm leading-relaxed">「事前予約でドリンク1杯無料」「当日決済から500円引き」などの特典をイベントページに表示。来場への動機付けができます。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- How it Works -->
+<section class="py-32 px-6" id="how">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 reveal">
+<span class="text-primary font-black tracking-widest text-xs uppercase mb-4 block">使い方</span>
+<h2 class="text-4xl lg:text-6xl font-jakarta font-extrabold mb-8">3ステップで<br/>告知がはじまる</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-12 relative">
+<!-- Step 1 -->
+<div class="relative reveal group">
+<div class="text-9xl font-jakarta font-black text-secondary/10 absolute -top-16 -left-8 -z-10 leading-none">1</div>
+<div class="pt-10">
+<div class="w-full aspect-video rounded-xl overflow-hidden mb-8 bg-surface-container shadow-lg">
+<img alt="Line login" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_Ex53S2eopDfrmt4cpnCW5Bzo7JLE6hEY0gfF6DBpf7-xf9l3V5EvzOnoVUpjfQtlslJ5XzlnJ1V-ckjCPk6HXG-zx5e3ol-GjGG5_PO97mZVoPzBY6tjzkZcQVoh5TFslA2pC3-jNVO9ocdf_8A3rqgzJdG43btsfm0KvIi6Agufr-a0Fh9TA_J7jmF1KJSWegrlGyHRoIZNE1lq7xZcIe87aURardInD73lh2zWx-DcBQ6pLi3rP1zZfnuBGIB9qZaD-4BlaDg4"/>
+</div>
+<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">login</span>
+                                LINEで登録するだけ
+                            </h3>
+<p class="text-on-surface-variant leading-relaxed">面倒なアカウント作成は不要。LINEログインだけで即スタート。難しい設定はありません。</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative reveal group">
+<div class="text-9xl font-jakarta font-black text-secondary/10 absolute -top-16 -left-8 -z-10 leading-none">2</div>
+<div class="pt-10">
+<div class="w-full aspect-video rounded-xl overflow-hidden mb-8 bg-surface-container shadow-lg">
+<img alt="Create event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVyWDo43aXZ4KlgIQYZP_8EUG5pEbOnGPhiUN7TsEA5EsrL3ZL2xSp6hNtMmKBEbvatsvU7giGEgOr1iTckc02qqHCclGu1VBwWZgQMd6O6zm8G2rp-9W84adP_1_XxuF8QbOeK2G1lUS5i8zbLiQOy_ligKvA2XJuID0FzVY2z28EdbU82gk4nt2OSUUwff4ec0pifFgCCm4a4iZzuY38b2gSCclfYinN0gDWduFmiEjkyZPwzrsZyhtnaDQVs6eWQf-1gA_dVIki"/>
+</div>
+<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+                                イベントページを作る
+                            </h3>
+<p class="text-on-surface-variant leading-relaxed">タイトル・日時・画像・特典を入力するだけで完成。Flexメッセージも自動で生成。デザイン・印刷代より安く、ずっと早い。</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative reveal group">
+<div class="text-9xl font-jakarta font-black text-secondary/10 absolute -top-16 -left-8 -z-10 leading-none">3</div>
+<div class="pt-10">
+<div class="w-full aspect-video rounded-xl overflow-hidden mb-8 bg-surface-container shadow-lg">
+<img alt="Spread message" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXjeagOrObvnds7EVxkwDkkaVXcWnCOGr3Q-bqycaMeVEIT3HC6T786xvQGoZ1EqwizNHFoAGz3Z6hDRFW7XhgpKzM9KG7vyn3PK5t76-FRNlbQQa95SxWDVgMRDc8Sloi48A6zDQBIJ6O6BUJtgOrBJv9a5GWhlgS7GYlVVxFgSuS6eKB2nFdVS7xfuRRDLPXz4r_tGVfgREOGU2R-LRudTsQn1CQLnaK2o4VKMlAb_-P0oGK1iUJnaiLJCzbPEbKnkb3QXlBT2K1"/>
+</div>
+<h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">send</span>
+                                LINEで告知・サポーターを呼ぶ
+                            </h3>
+<p class="text-on-surface-variant leading-relaxed">生成されたメッセージをLINEで送るだけ。さらにサポーターを招待すれば拡散がはじまります。当日はQRで入場管理まで完結。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Use Cases -->
+<section class="py-32 px-6 bg-surface-container">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20 reveal">
+<span class="text-primary font-black tracking-widest text-xs uppercase mb-4 block">こんな方に使われています</span>
+<h2 class="text-4xl lg:text-6xl font-jakarta font-extrabold">あなたのコミュニティに<br/>nestは馴染みます</h2>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white rounded-lg border border-outline/30 hover:-translate-y-2 transition-all reveal overflow-hidden flex flex-col">
+<div class="h-40 overflow-hidden">
+<img alt="Yoga class" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4eXvXfpUbBI8ObV5-DFdibPTgNYw8e97gQ0sWGxNpmvMk4wyOHa42gaCi5PsWH2QEBbC1ySXzHhQ5lNEYHVMMerZ_B2dyBi9MDUU5QaSO3GaT-TZAJMKF-IE41bm7VJoo5zjLn5fzJ_dbwIjN0PogZhjlttNw3cR6b4yiuyfBCcWsT1kvYKSxxPisnvmIFhM7YVfZOKU7P4ri5ynG1Gfx6toU4mpp57WraU54LbVcYxdGnyTfBbR0fimtkLqWMIjnGSbuf6iLoo9k"/>
+</div>
+<div class="p-8">
+<span class="text-primary text-[10px] font-black uppercase mb-4 block">フリーランス</span>
+<h3 class="font-bold mb-3">ヨガ講師・パーソナルトレーナー</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">レンタルスペースで開くクラスの告知を、毎回LINEで完結。既存生徒に直接届いて、新しいクラスがすぐ埋まる。</p>
+</div>
+</div>
+<div class="bg-white rounded-lg border border-outline/30 hover:-translate-y-2 transition-all reveal overflow-hidden flex flex-col">
+<div class="h-40 overflow-hidden">
+<img alt="Wine event" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASRRtIHGj39BmFATOlfO3CjP6zqv6TXjNMyWVSNHBt_HcCr8An1wZXj0D2e5rY_ZK-oRBMYwMR8QhfD4iIchanAvAH_dCDDwoyAXK_ZjbJmJHEkdn8HniJCl-RJ9DIXcoAbUu20N9GvBWj0aWXnNY5mtZpz06yg1vi2p3tZ-4iHV1tibOMi1Kvk2qWvOHIsRf1mepkfqxATiX6DsjZnudfIu13zYEY6WhS4eObTScwj5Z0nPWsB9_ojq8VeEAdgUsjGjkgWh9jXfVZ"/>
+</div>
+<div class="p-8">
+<span class="text-primary text-[10px] font-black uppercase mb-4 block">飲食店</span>
+<h3 class="font-bold mb-3">特別イベント・ワイン会の主催</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">常連さんに向けた特別な夜の告知を手軽に。事前予約をQRで管理して、当日の受付をスマートに。</p>
+</div>
+</div>
+<div class="bg-white rounded-lg border border-outline/30 hover:-translate-y-2 transition-all reveal overflow-hidden flex flex-col">
+<div class="h-40 overflow-hidden">
+<img alt="Store新作" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ_skeKKkMRuHfcDH7NihhC8tRhT1pIlMnaTRDZwQo2dkLDuEwcLCEDg2xBOTRItCqbvvGe3Y39j6LBOrXvgQ0hkP0lEfmgjVuwoi8G8q6Ik3uX3p9cljB8WfryyR7Y1uGPjJBya8LEAaaHZpRxI6fJhix5oWjvzDdhAK5xy-4_99A61J0LWtqTOHrim_Ab9AraS6ZjA5vxrXWP22P93lMJYSifv8RelIS7pZ-v18MLwKCYbTpP1BrIpCOert_URoCMev5CRzSNbU_"/>
+</div>
+<div class="p-8">
+<span class="text-primary text-[10px] font-black uppercase mb-4 block">セラー・作家</span>
+<h3 class="font-bold mb-3">限定品・新作のお知らせ</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">SNSより先に、信頼できる知人へ優先案内。「あなただけに教える」感覚が特別感を生む。</p>
+</div>
+</div>
+<div class="bg-white rounded-lg border border-outline/30 hover:-translate-y-2 transition-all reveal overflow-hidden flex flex-col">
+<div class="h-40 overflow-hidden">
+<img alt="Event market" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4E27ZR6y9LjPwnBfAviaviwWEx_f8rP1bhgSZbazfj7C3kHs1gb8hNuu6uq1rfD6zSnE9ql6d8D52-4hD6mElqX9c7_lAnG3ut4WG8FqPtIVTcGHj8aXcMxmAwZNskas0mJXSIONpYPjRxjMpmLGlVeLZa0Ay4FRT3VBA392tLO5Lv1XoKQ_78nNt6qvK9EFtJisXtQtgcQyyenILn1dN-i-yPpCW_eliu-LSMquo-XyK9FxL497zEbvG8yYXTQ1WyzGRAOuW5ygS"/>
+</div>
+<div class="p-8">
+<span class="text-primary text-[10px] font-black uppercase mb-4 block">イベンター</span>
+<h3 class="font-bold mb-3">マルシェ・ポップアップの集客</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">サポーターがそれぞれの友人に拡散。口コミがデジタルで広がって、集客経路も見える化される。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing -->
+<section class="py-32 px-6" id="pricing">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16 reveal">
+<span class="text-primary font-black tracking-widest text-xs uppercase mb-4 block">料金</span>
+<h2 class="text-4xl lg:text-6xl font-jakarta font-extrabold mb-6">使った分だけ。<br/>固定費はゼロ。</h2>
+<p class="text-on-surface-variant">月額なし。使いたい時だけ使えばOK。</p>
+</div>
+<div class="bg-white rounded-lg shadow-[0_50px_100px_-20px_rgba(0,110,43,0.1)] border border-primary/10 overflow-hidden reveal">
+<div class="vibrant-gradient p-12 text-center text-white">
+<span class="inline-block bg-white/20 text-white text-[10px] font-black uppercase px-4 py-1 rounded-full mb-6">シンプル価格</span>
+<p class="text-sm font-medium mb-2 opacity-80">イベント1件につき</p>
+<div class="text-7xl font-jakarta font-black">¥1,000<span class="text-xl font-bold opacity-70"> / 件</span></div>
+</div>
+<div class="p-12">
+<div class="bg-secondary/5 border border-secondary/20 rounded-lg p-6 mb-10 text-center">
+<p class="text-primary font-bold text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-secondary text-lg">lightbulb</span>
+                                A4チラシ100枚印刷 ≒ 3,000〜5,000円<br/>
+                                nestなら 1,000円で、LINEで直接届く
+                            </p>
+</div>
+<div class="grid md:grid-cols-2 gap-y-6 gap-x-12 mb-12">
+<div class="flex items-center gap-3 font-bold text-sm"><span class="material-symbols-outlined text-secondary">check_circle</span> イベントページ作成</div>
+<div class="flex items-center gap-3 font-bold text-sm"><span class="material-symbols-outlined text-secondary">check_circle</span> Flexメッセージ自動生成</div>
+<div class="flex items-center gap-3 font-bold text-sm"><span class="material-symbols-outlined text-secondary">check_circle</span> サポーター招待・拡散機能</div>
+<div class="flex items-center gap-3 font-bold text-sm"><span class="material-symbols-outlined text-secondary">check_circle</span> 集客経路の可視化</div>
+<div class="flex items-center gap-3 font-bold text-sm"><span class="material-symbols-outlined text-secondary">check_circle</span> QRコードによる入場管理</div>
+<div class="flex items-center gap-3 font-bold text-sm"><span class="material-symbols-outlined text-secondary">check_circle</span> 特典・割引の設定</div>
+</div>
+<a class="w-full vibrant-gradient text-white py-6 rounded-full font-jakarta font-black text-xl shadow-xl shadow-primary/30 hover:shadow-primary/40 hover:-translate-y-1 transition-all flex items-center justify-center gap-3" href="#start">
+                            今すぐはじめる <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-6 text-center bg-surface-container/50 relative overflow-hidden" id="start">
+<div class="max-w-4xl mx-auto relative z-10 reveal">
+<h2 class="text-5xl lg:text-7xl font-jakarta font-black mb-8 leading-tight">あなたのコミュニティを、<br/><span class="text-primary italic">もっと近くに。</span></h2>
+<p class="text-xl text-on-surface-variant mb-12 leading-relaxed">
+                    登録は無料・LINEだけでOK。<br/>
+                    次のイベント告知から、nestをためしてみてください。
+                </p>
+<button class="vibrant-gradient text-white px-16 py-6 rounded-full font-jakarta font-black text-2xl hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-primary/30">
+                    LINEではじめる（無料）
+                </button>
+<p class="mt-8 text-sm text-on-surface-variant/70 font-bold">
+                    イベント公開時のみ課金
+                </p>
+</div>
+<div class="absolute -bottom-20 -right-20 w-80 h-80 bg-secondary organic-shape opacity-10 animate-pulse"></div>
+</section>
+</main>
+<footer class="bg-white border-t border-outline/30 py-20 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
+<div class="font-logo text-4xl text-primary">nest</div>
+<div class="flex flex-wrap justify-center gap-8 font-jakarta text-xs font-black tracking-widest uppercase text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">特定商取引法に基づく表記</a>
+<a class="hover:text-primary transition-colors" href="#">プライバシーポリシー</a>
+<a class="hover:text-primary transition-colors" href="#">利用規約</a>
+<a class="hover:text-primary transition-colors" href="#">お問い合わせ</a>
+</div>
+</div>
+<div class="text-center text-on-surface-variant/40 text-[10px] font-bold tracking-[0.2em] uppercase">
+                © 2025 nest. All rights reserved. Built for communities.
+            </div>
+</div>
+</footer>
+<script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body></html>
